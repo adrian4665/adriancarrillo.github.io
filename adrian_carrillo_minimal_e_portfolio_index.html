@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adrian Carrillo — E‑Portfolio</title>
+  <meta name="description" content="E‑portfolio of Adrian Carrillo: projects, resume, and contact." />
+  <style>
+    /* ===== Dark modern theme ===== */
+    :root {
+      --bg: #0b0b0d;
+      --fg: #f4f4f6;
+      --muted: #b1b1b6;
+      --line: #1b1b20;
+      --link: #7aa2ff;
+      --card: #121216;
+      --radius: 14px;
+    }
+    html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--fg);
+      background: var(--bg);
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+    .container { max-width: 920px; margin: 0 auto; padding: 24px; }
+    header.site-header { border-bottom: 1px solid var(--line); position: sticky; top: 0; background: rgba(11,11,13,0.85); backdrop-filter: blur(6px); }
+    .brand { display: flex; align-items: baseline; gap: 8px; }
+    .brand h1 { font-size: 20px; margin: 0; letter-spacing: 0.3px; }
+    .brand .dot { color: var(--link); }
+    nav a { text-decoration: none; color: var(--fg); opacity: 0.8; padding: 8px 10px; border-radius: 8px; }
+    nav a:hover { background: var(--card); opacity: 1; }
+    .nav-wrap { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .hero { padding: 80px 24px 24px; text-align: center; animation: fadeIn 1.4s ease; }
+    .hero h2 { font-size: clamp(28px, 4vw, 44px); line-height: 1.2; margin: 8px 0 8px; }
+    .hero p { color: var(--muted); margin: 0 auto; max-width: 60ch; }
+    .tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 14px; }
+    .tag { font-size: 13px; color: var(--muted); border: 1px solid var(--line); padding: 4px 10px; border-radius: 999px; }
+    .cta-row { display: flex; justify-content: center; gap: 12px; margin-top: 20px; }
+    .btn { display: inline-block; border: 1px solid var(--line); padding: 10px 14px; border-radius: 10px; text-decoration: none; color: var(--fg); }
+    .btn.primary { background: var(--link); color: #fff; border-color: var(--link); }
+    section { padding: 40px 24px; border-top: 1px solid var(--line); animation: fadeIn 1.4s ease; }
+    section h3 { font-size: 22px; margin: 0 0 8px; }
+    section p.lead { color: var(--muted); margin-top: 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    .card h4 { margin: 0 0 6px; font-size: 18px; color: var(--link); }
+    .card p { margin: 0 0 10px; color: var(--muted); }
+    footer { border-top: 1px solid var(--line); padding: 24px; color: var(--muted); text-align: center; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: none;} }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <div class="brand"><h1>Adrian Carrillo<span class="dot">.</span></h1></div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h2>Pre‑Engineering student exploring applied physics, chips, and game design.</h2>
+    <p>Documenting projects and progress in engineering, physics, and code.</p>
+    <div class="tags">
+      <span class="tag">Applied Physics</span>
+      <span class="tag">Software</span>
+      <span class="tag">Game Design</span>
+    </div>
+    <div class="cta-row">
+      <a class="btn primary" href="#projects">See Projects</a>
+      <a class="btn" href="#contact">Get in Touch</a>
+    </div>
+  </section>
+
+  <main>
+    <section id="projects" class="container">
+      <h3>Projects</h3>
+      <div class="grid">
+        <article class="card">
+          <h4>Trebuchet Design</h4>
+          <p>Engineered a small-scale trebuchet with optimized arm ratio, counterweight mass, and release angle to achieve maximum range under 0.5 m constraints.</p>
+          <div class="meta">Mechanics • Physics • Prototyping</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="container">
+      <h3>About</h3>
+      <p>I’m Adrian Carrillo, a pre‑engineering student interested in applied physics, computer hardware, and software development. I enjoy problem‑solving, building prototypes, and exploring how systems interact between the digital and physical worlds.</p>
+    </section>
+
+    <section id="resume" class="container">
+      <h3>Resume</h3>
+      <p class="lead">Download a one‑page PDF resume.</p>
+      <a class="btn" href="resume.pdf" download>Download Resume (PDF)</a>
+    </section>
+
+    <section id="contact" class="container">
+      <h3>Contact</h3>
+      <p>Reach out via email — I usually reply within a day.</p>
+      <p><a class="btn" href="mailto:your.email@example.com">Email Adrian</a></p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Adrian Carrillo • Built with plain HTML/CSS
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
